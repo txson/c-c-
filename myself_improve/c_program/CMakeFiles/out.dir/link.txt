@@ -1,0 +1,1 @@
+/usr/bin/cc   -O0 -Wall -g -ggdb   CMakeFiles/out.dir/main.c.o  -o out -rdynamic 

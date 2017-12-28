@@ -1,0 +1,43 @@
+#include <iostream>
+
+class employee {
+	public :
+		string name;
+		float base_pay;
+		float perf_pay;
+		int id;
+
+		virtual float pay(int leave_day){
+			return base_pay + perf_pay - leave_day*(base_pay/22.0);
+		}
+};
+
+class technician : public employee {
+	public :
+	
+}
+
+class mannager : public employee {
+	public :
+
+}
+
+class salesamn : public employee {
+	public :
+
+}
+
+class salesamn : public employee {
+	public :
+
+}
+
+class salesamn : public employee {
+	public :
+
+}
+
+int main()
+{
+
+}

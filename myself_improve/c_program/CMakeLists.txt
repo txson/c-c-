@@ -1,0 +1,15 @@
+PROJECT(player)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+#将当前目录中的源文件名称赋值给变量 DIR_SRCS
+AUX_SOURCE_DIRECTORY(. DIR_SRCS)
+
+#指示变量 DIR_SRCS 中的源文件需要编译 成一个名称为 main 的可执行文件
+ADD_EXECUTABLE(out ${DIR_SRCS})
+
+SET(CMAKE_BUILD_TYPE "Debug")  
+SET(CMAKE_C_FLAGS_DEBUG "$ENV{CFLAGS} -O0 -Wall -g -ggdb")
+SET(CMAKE_C_FLAGS_RELEASE "$ENV{CFLAGS} -O3 -Wall") 
+
+
+

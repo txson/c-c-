@@ -1,0 +1,95 @@
+#include <iostream>
+
+using namespace std;
+
+class Animal
+{
+	public :
+		Animal(int x){
+			count++;
+			class_name = "Animal";
+//			cout << "create animal :" << count << endl;
+		}
+		~Animal(){
+			count--;
+//			cout << "destory animal :" << count << endl;
+		}
+
+		static int count;
+		int raoxu;
+		int cal_s(int a, int b);
+		virtual string my_name(void){
+			return class_name;
+		}
+		int get_my_id(void){
+			return class_id;
+		}
+		void set_my_id(int id){
+			class_id = id;
+		}
+
+	protected :
+		string class_name;
+
+	private :
+		int class_id;
+};
+
+class Pet : public Animal
+{
+	public :
+		int raoxu;
+		Pet(int x, int b):Animal(4),raoxu(b){
+			count ++;
+//			cout << "create pet :" << count << endl;
+			class_name = "Pet";
+		}
+		~Pet(){
+			count --;
+//			cout << "destory pet :" << count << endl;
+		}
+	
+		string my_name(void){
+			return class_name;
+		}
+		int my_id(void){
+			return class_id;
+		}
+
+	protected :
+		string class_name;
+
+	private :
+		int class_id;
+};
+
+int Animal::count = 0;
+
+namespace one {
+	void fun(){
+		cout << "namespace one" << endl;
+	}
+}
+namespace two {
+	void fun(){
+		cout << "namespace two" << endl;
+	}
+}
+int main()
+{
+	Animal *animal;
+	Animal animal2(2);
+//	Pet dog(3,5);
+//	cout << dog.raoxu << endl;
+
+	one::fun();
+	two::fun();
+
+	animal = &animal2;
+	cout << animal->my_name() << endl;
+//	animal = &dog;
+//	cout << animal->my_name() << endl;
+//	cout << animal->raoxu << endl;
+
+	return 0;
+}
